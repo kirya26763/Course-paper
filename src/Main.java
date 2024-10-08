@@ -29,13 +29,18 @@ public class Main {
         return employeeMaxSalary;
     }
 
+    private static double averageSalary() {
+        return (double) calculatedSumSalary() / employees.length;
+    }
+
     private static void print() {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
         System.out.println("Сумма зарплат всех сотрудников " + calculatedSumSalary());
-        System.out.println("Сотркдник с миниммальной зарплатой" +calculatedMinSalary());
-        System.out.println("Сотркдник с максимальной зарплатой"+ calculatedMaxSalary());
+        System.out.println("Сотркдник с миниммальной зарплатой " + calculatedMinSalary());
+        System.out.println("Сотркдник с максимальной зарплатой " + calculatedMaxSalary());
+        System.out.println("Средняя ЗП сотрудников состовляет " + averageSalary());
     }
 
     public static void main(String[] args) {
