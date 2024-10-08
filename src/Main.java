@@ -41,6 +41,10 @@ public class Main {
         System.out.println("Сотркдник с миниммальной зарплатой " + calculatedMinSalary());
         System.out.println("Сотркдник с максимальной зарплатой " + calculatedMaxSalary());
         System.out.println("Средняя ЗП сотрудников состовляет " + averageSalary());
+        for (Employee employee : employees) {
+            System.out.println(employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName());
+        }
+
     }
 
     public static void main(String[] args) {
