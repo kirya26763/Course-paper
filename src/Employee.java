@@ -73,12 +73,21 @@ public class Employee {
     public void setDepartment(int department) {
         this.department = department;
     }
-
     @Override
     public String toString() {
         return "id - " + id +
                 ", Ф.И.О сотрудника - " + '\"' + lastName + " " + firstName + " " + middleName + " " + '\"' + " отдел "
                 + department + ", ЗП - " + salary;
+    }
+    public String Deportment (){
+        return "Отдел - "+ department;
+    }
+    public String idFullNameSalary (){
+        return "id - " + id +
+                ", Ф.И.О сотрудника - " + '\"' + lastName + " " + firstName + " " + middleName + " " + '\"' + ", ЗП - " + salary;
+    }
+    public String fullName(){
+        return "Ф.И.О сотрудника - " + '\"' + lastName + " " + firstName + " " + middleName + " " + '\"';
     }
 
     @Override
