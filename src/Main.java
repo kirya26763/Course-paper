@@ -1,12 +1,13 @@
 public class Main {
 
+    private static final Employee[] employees = new Employee[10];
+
     private static void salaryIncrease() {
+        int percent = 10;
         for (Employee employee : employees) {
-            employee.setSalary(employee.getSalary() + (employee.getSalary() / 100 * 10));
+            employee.setSalary(employee.getSalary() + (employee.getSalary() / 100 * percent));
         }
     }
-
-    private static final Employee[] employees = new Employee[10];
 
     private static int calculatedSumSalary() {
         int sumSalary = 0;
@@ -56,74 +57,52 @@ public class Main {
         }
     }
 
-    private static void printDeportmentSalary() {
-        System.out.println("Сотркдник с миниммальной зарплатой в " + calculatedMinSalary().Deportment());
-        System.out.println("Сотркдник с максимальной зарплатой в " + calculatedMaxSalary().Deportment());
+    private static void printDepartmentSalary() {
+        System.out.println("Сотркдник с миниммальной зарплатой в " + calculatedMinSalary().getDepartment());
+        System.out.println("Сотркдник с максимальной зарплатой в " + calculatedMaxSalary().getDepartment());
     }
 
-    private static int calculatedSumSalaryDeportment() {
+    private static int calculatedSumSalaryDepartment() {
+        int numberDepartment = 1;
         int sumSalary = 0;
-        double[] sumSalaryDeportment = new double[5];
-        int depotment = 0;
-        int numberDeportment = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == depotment + 1) {
-                sumSalary += employee.getSalary();
-            } else {
-                sumSalaryDeportment[depotment] = sumSalary;
-                depotment++;
-                sumSalary = 0;
+            if (employee.getDepartment() == numberDepartment) {
                 sumSalary += employee.getSalary();
             }
-            sumSalaryDeportment[depotment] = sumSalary;
         }
-        for (int i = 0; i < sumSalaryDeportment.length; i++) {
-            numberDeportment++;
-            System.out.println("Сумма зарплат " + numberDeportment + " отдела - " + sumSalaryDeportment[i]);
-        }
-        return sumSalary;
+        System.out.println("Сумма зарплат отдела - " + numberDepartment + " - " + sumSalary);
+        return numberDepartment;
     }
 
-    private static int calculatedAverageSalaryDeportment() {
+    private static int calculatedAverageSalaryDepartment() {
+        int numberDepartment = 1;
         int sumSalary = 0;
-        double[] sumSalaryDeportment = new double[5];
-        int depotment = 0;
-        int numberDeportment = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == depotment + 1) {
-                sumSalary += employee.getSalary();
-            } else {
-                sumSalaryDeportment[depotment] = sumSalary;
-                depotment++;
-                sumSalary = 0;
+            if (employee.getDepartment() == numberDepartment) {
                 sumSalary += employee.getSalary();
             }
-            sumSalaryDeportment[depotment] = sumSalary;
         }
-        for (int i = 0; i < sumSalaryDeportment.length; i++) {
-            sumSalaryDeportment[i] /= 2;
-            numberDeportment++;
-            System.out.println("средняя сумма зарплат " + numberDeportment + " отдела - " + sumSalaryDeportment[i]);
-        }
-        return sumSalary;
+        sumSalary /= 2;
+        System.out.println("Средняя сумма зарплат отдела - " + numberDepartment + " - " + sumSalary);
+        return numberDepartment;
     }
 
-    private static void salaryIncreaseDeportment() {
-        int numberDeportment = 1;
+    private static void salaryIncreaseDepartment() {
+        int numberDepartment = 1;
         int conditionalPercent = 8;
-        System.out.println("Отде - " + numberDeportment);
+        System.out.println("Отде - " + numberDepartment);
         for (Employee employee : employees) {
-            if (employee.getDepartment() == numberDeportment) {
-                employee.setSalary(employee.getSalary()+(employee.getSalary()/100*conditionalPercent) );
+            if (employee.getDepartment() == numberDepartment) {
+                employee.setSalary(employee.getSalary() + (employee.getSalary() / 100 * conditionalPercent));
             }
         }
     }
 
-    private static void printDeportment() {
-        int numberDeportment = 1;
-        System.out.println("Отдел - " + numberDeportment);
+    private static void printDepartment() {
+        int numberDepartment = 1;
+        System.out.println("Отдел - " + numberDepartment);
         for (Employee employee : employees) {
-            if (employee.getDepartment() == numberDeportment)
+            if (employee.getDepartment() == numberDepartment)
                 System.out.println(employee.idFullNameSalary());
         }
     }
@@ -162,11 +141,11 @@ public class Main {
         print();
         listEmployees();
         salaryIncrease();
-        printDeportmentSalary();
-        calculatedSumSalaryDeportment();
-        calculatedAverageSalaryDeportment();
-        salaryIncreaseDeportment();
-        printDeportment();
+        printDepartmentSalary();
+        calculatedSumSalaryDepartment();
+        calculatedAverageSalaryDepartment();
+        salaryIncreaseDepartment();
+        printDepartment();
         printSortingMinSalary();
         printSortingMaxSalary();
     }

@@ -79,9 +79,6 @@ public class Employee {
                 ", Ф.И.О сотрудника - " + '\"' + lastName + " " + firstName + " " + middleName + " " + '\"' + " отдел "
                 + department + ", ЗП - " + salary;
     }
-    public String Deportment (){
-        return "Отдел - "+ department;
-    }
     public String idFullNameSalary (){
         return "id - " + id +
                 ", Ф.И.О сотрудника - " + '\"' + lastName + " " + firstName + " " + middleName + " " + '\"' + ", ЗП - " + salary;
