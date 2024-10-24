@@ -2,8 +2,7 @@ public class Main {
 
     private static final Employee[] employees = new Employee[10];
 
-    private static void salaryIncrease() {
-        int percent = 10;
+    private static void salaryIncrease(int percent) {
         for (Employee employee : employees) {
             employee.setSalary(employee.getSalary() + (employee.getSalary() / 100 * percent));
         }
@@ -62,8 +61,7 @@ public class Main {
         System.out.println("Сотркдник с максимальной зарплатой в " + calculatedMaxSalary().getDepartment());
     }
 
-    private static int calculatedSumSalaryDepartment() {
-        int numberDepartment = 1;
+    private static int calculatedSumSalaryDepartment(int numberDepartment) {
         int sumSalary = 0;
         for (Employee employee : employees) {
             if (employee.getDepartment() == numberDepartment) {
@@ -74,8 +72,7 @@ public class Main {
         return numberDepartment;
     }
 
-    private static int calculatedAverageSalaryDepartment() {
-        int numberDepartment = 1;
+    private static int calculatedAverageSalaryDepartment(int numberDepartment) {
         int sumSalary = 0;
         for (Employee employee : employees) {
             if (employee.getDepartment() == numberDepartment) {
@@ -87,8 +84,7 @@ public class Main {
         return numberDepartment;
     }
 
-    private static void salaryIncreaseDepartment() {
-        int numberDepartment = 1;
+    private static void salaryIncreaseDepartment(int numberDepartment) {
         int conditionalPercent = 8;
         System.out.println("Отде - " + numberDepartment);
         for (Employee employee : employees) {
@@ -98,8 +94,7 @@ public class Main {
         }
     }
 
-    private static void printDepartment() {
-        int numberDepartment = 1;
+    private static void printDepartment(int numberDepartment) {
         System.out.println("Отдел - " + numberDepartment);
         for (Employee employee : employees) {
             if (employee.getDepartment() == numberDepartment)
@@ -140,12 +135,12 @@ public class Main {
         employees[9] = new Employee("Никита", "Голубцов", "Григорьевичь", 45000, 5);
         print();
         listEmployees();
-        salaryIncrease();
+        salaryIncrease(10);
         printDepartmentSalary();
-        calculatedSumSalaryDepartment();
-        calculatedAverageSalaryDepartment();
-        salaryIncreaseDepartment();
-        printDepartment();
+        calculatedSumSalaryDepartment(1);
+        calculatedAverageSalaryDepartment(1);
+        salaryIncreaseDepartment(1);
+        printDepartment(1);
         printSortingMinSalary();
         printSortingMaxSalary();
     }
